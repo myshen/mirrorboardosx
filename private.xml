@@ -1,0 +1,179 @@
+<?xml version="1.0"?>
+<root>    
+  <item>
+    <name>MirrorBoardOSX</name>
+    <appendix>Port of XKCD's mirrorboard for OS X</appendix>
+    <identifier>private.mirrorboardosx</identifier>
+
+    <!-- difference: xkb has caps as a modifier key. This proved to be
+         difficult for me to figure out how to do with KeyRemap4MacBook so
+         this remap relies on caps being a mode shift. Patch welcome! -->
+    <!-- difference: xkb has tilde as the delete key -->
+    <autogen>--KeyToKey--
+      KeyCode::TAB, ModifierFlag::CAPSLOCK,
+      KeyCode::DELETE
+    </autogen>
+    
+    <autogen>--KeyToKey--
+      KeyCode::SPACE, ModifierFlag::CAPSLOCK,
+      KeyCode::RETURN
+    </autogen>
+    
+    <!-- difference: Double modifiers for extra keys.
+         Order matters! The double modifier autogen's should come first or
+         else they get overridden. -->        
+
+    <!-- difference: I use a double modifier (CAPS+COMMAND) to get
+         '-+' rather than replace '!@#' -->
+    <autogen>--KeyToKey--
+      KeyCode::KEY_1, ModifierFlag::CAPSLOCK | ModifierFlag::COMMAND_L,
+      KeyCode::EQUAL
+    </autogen>
+    <autogen>--KeyToKey--
+      KeyCode::KEY_2, ModifierFlag::CAPSLOCK | ModifierFlag::COMMAND_L,
+      KeyCode::MINUS
+    </autogen>
+
+    <!-- difference: I also use the double modifier to map 
+         'qwe' to '[]\'
+         'a' to ';' -->
+    <autogen>--KeyToKey--
+      KeyCode::Q, ModifierFlag::CAPSLOCK | ModifierFlag::COMMAND_L,
+      KeyCode::BRACKET_LEFT
+    </autogen>
+    <autogen>--KeyToKey--
+      KeyCode::W, ModifierFlag::CAPSLOCK | ModifierFlag::COMMAND_L,
+      KeyCode::BRACKET_RIGHT
+    </autogen>
+    <autogen>--KeyToKey--
+      KeyCode::E, ModifierFlag::CAPSLOCK | ModifierFlag::COMMAND_L,
+      KeyCode::BACKSLASH
+    </autogen>
+    <autogen>--KeyToKey--
+      KeyCode::A, ModifierFlag::CAPSLOCK | ModifierFlag::COMMAND_L,
+      KeyCode::SEMICOLON
+    </autogen>
+    
+    <!--
+    I map some double modifier letters to work similar to VIM movement
+    keys. I found 'j' and 'k' came naturally mirrored but movement left and
+    right made more sense mapped to 's' and 'g'.
+    -->
+    <autogen>--KeyToKey--
+      KeyCode::S, ModifierFlag::CAPSLOCK | ModifierFlag::COMMAND_L,
+      KeyCode::CURSOR_LEFT
+    </autogen>
+    <autogen>--KeyToKey--
+      KeyCode::D, ModifierFlag::CAPSLOCK | ModifierFlag::COMMAND_L,
+      KeyCode::CURSOR_UP
+    </autogen>
+    <autogen>--KeyToKey--
+      KeyCode::F, ModifierFlag::CAPSLOCK | ModifierFlag::COMMAND_L,
+      KeyCode::CURSOR_DOWN
+    </autogen>
+    <autogen>--KeyToKey--
+      KeyCode::G, ModifierFlag::CAPSLOCK | ModifierFlag::COMMAND_L,
+      KeyCode::CURSOR_RIGHT
+    </autogen>
+
+    <autogen>--KeyToKey--
+      KeyCode::KEY_1, ModifierFlag::CAPSLOCK,
+      KeyCode::KEY_0
+    </autogen>
+    <autogen>--KeyToKey--
+      KeyCode::KEY_2, ModifierFlag::CAPSLOCK,
+      KeyCode::KEY_9
+    </autogen>
+    <autogen>--KeyToKey--
+      KeyCode::KEY_3, ModifierFlag::CAPSLOCK,
+      KeyCode::KEY_8
+    </autogen>
+    <autogen>--KeyToKey--
+      KeyCode::KEY_4, ModifierFlag::CAPSLOCK,
+      KeyCode::KEY_7
+    </autogen>
+    <autogen>--KeyToKey--
+      KeyCode::KEY_5, ModifierFlag::CAPSLOCK,
+      KeyCode::KEY_6
+    </autogen>
+    <autogen>--KeyToKey--
+      KeyCode::KEY_6, ModifierFlag::CAPSLOCK,
+      KeyCode::KEY_5
+    </autogen>
+
+    <autogen>--KeyToKey--
+      KeyCode::Q, ModifierFlag::CAPSLOCK,
+      KeyCode::P
+    </autogen>
+    <autogen>--KeyToKey--
+      KeyCode::W, ModifierFlag::CAPSLOCK,
+      KeyCode::O
+    </autogen>
+    <autogen>--KeyToKey--
+      KeyCode::E, ModifierFlag::CAPSLOCK,
+      KeyCode::I
+    </autogen>
+    <autogen>--KeyToKey--
+      KeyCode::R, ModifierFlag::CAPSLOCK,
+      KeyCode::U
+    </autogen>
+    <autogen>--KeyToKey--
+      KeyCode::T, ModifierFlag::CAPSLOCK,
+      KeyCode::Y
+    </autogen>
+    <autogen>--KeyToKey--
+      KeyCode::Y, ModifierFlag::CAPSLOCK,
+      KeyCode::T
+    </autogen>
+    
+    <autogen>--KeyToKey--
+      KeyCode::A, ModifierFlag::CAPSLOCK,
+      KeyCode::QUOTE
+    </autogen>
+    <autogen>--KeyToKey--
+      KeyCode::S, ModifierFlag::CAPSLOCK,
+      KeyCode::L
+    </autogen>
+    <autogen>--KeyToKey--
+      KeyCode::D, ModifierFlag::CAPSLOCK,
+      KeyCode::K
+    </autogen>
+    <autogen>--KeyToKey--
+      KeyCode::F, ModifierFlag::CAPSLOCK,
+      KeyCode::J
+    </autogen>
+    <autogen>--KeyToKey--
+      KeyCode::G, ModifierFlag::CAPSLOCK,
+      KeyCode::H
+    </autogen>
+    <autogen>--KeyToKey--
+      KeyCode::H, ModifierFlag::CAPSLOCK,
+      KeyCode::G
+    </autogen>
+    
+    <autogen>--KeyToKey--
+      KeyCode::Z, ModifierFlag::CAPSLOCK,
+      KeyCode::SLASH
+    </autogen>
+    <autogen>--KeyToKey--
+      KeyCode::X, ModifierFlag::CAPSLOCK,
+      KeyCode::DOT
+    </autogen>
+    <autogen>--KeyToKey--
+      KeyCode::C, ModifierFlag::CAPSLOCK,
+      KeyCode::COMMA
+    </autogen>
+    <autogen>--KeyToKey--
+      KeyCode::V, ModifierFlag::CAPSLOCK,
+      KeyCode::M
+    </autogen>
+    <autogen>--KeyToKey--
+      KeyCode::B, ModifierFlag::CAPSLOCK,
+      KeyCode::N
+    </autogen>
+    <autogen>--KeyToKey--
+      KeyCode::N, ModifierFlag::CAPSLOCK,
+      KeyCode::B
+    </autogen>
+  </item>
+</root>
